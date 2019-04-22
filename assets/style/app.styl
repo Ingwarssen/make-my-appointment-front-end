@@ -1,0 +1,183 @@
+@import 'assets/fonts/googleRoboto.css';
+html {
+  overflow-y: auto !important;
+}
+
+/**
+ * Initialize general style for app.
+ */
+body
+  font: 12px Roboto, sans-serif
+
+/**
+ * You can set default values for the stylus variables that you wish to change.
+ * These must be declared before the import and will automatically override the Vuetify defaults.
+ * A list of available variables is located here https://github.com/vuetifyjs/vuetify/blob/master/src/stylus/settings/_variables.styl
+ * Example: $spacer := 16px
+ */
+
+.--strong, .strong {
+  font-weight: bold;
+}
+
+.--overflow-x {
+  overflow-x: hidden;
+}
+
+$spacer := 16px
+
+// Import Vuetify styling, don't move to top of file
+@import '~vuetify/src/stylus/main'
+
+// import custom styles for app
+@import './width'
+
+// modifiers
+.active-tab {
+  background: rgba(255, 255, 255, .12);
+}
+
+.active-menu {
+  background: #CFD8DC;
+}
+
+.height-100p {
+  height: 100%;
+}
+
+.height-600 {
+  height: 600px !important;
+}
+
+.min-height-600 {
+  min-height: 600px !important;
+}
+
+.height-100p-important {
+  height: 100% !important;
+}
+
+.height-50p {
+  height: 50%;
+}
+
+.height-60 {
+  height: 60%;
+}
+
+.max-height-77 {
+  max-height: 77%;
+}
+
+.max-height-173p {
+  max-height: 173px;
+}
+
+.min-height-0 .input-group__details {
+  min-height: 0;
+}
+
+.table-5rows {
+  min-height: 303px;
+}
+
+.height-25p {
+  height: 25%;
+}
+
+.height-20p {
+  height: 20px;
+}
+
+.height-192p {
+  height: 192px;
+}
+
+.max-height-600 {
+  max-height: 600px;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.elevation-1 .table__overflow {
+  overflow-y: auto !important;
+  height: 195px;
+}
+
+.float-right {
+  float: right;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.pt-30 {
+  padding-top: 30px;
+}
+
+.outline-none:focus {
+  outline: none;
+}
+
+.color-grey {
+  color: #808080;
+}
+
+.bold-600 {
+  font-weight: 600 !important;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+  background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #555555;
+}
+
+/**/
+
+.ps-r {
+  position: relative !important;
+}
+
+.ps-a {
+  position: absolute !important;
+}
+
+// override table tr, th, td padding
+table.v-table thead td:not(:nth-child(1)), table.v-table tbody td:not(:nth-child(1)), table.v-table thead th:not(:nth-child(1)), table.v-table tbody th:not(:nth-child(1)), table.v-table thead td:first-child, table.v-table tbody td:first-child, table.v-table thead th:first-child, table.v-table tbody th:first-child {
+  padding: 0 10px;
+}
+
+.fak-toolbar-title .v-toolbar__content {
+  padding-left: 5px;
+}
+
+.theme--light.v-btn.v-btn--disabled {
+  color: grey !important;
+}
+
+.theme--light.v-btn.v-btn--disabled .v-icon {
+  color: grey !important;
+}
+
+.v-input.search-input.v-text-field.v-text-field--single-line {
+  padding-top: 0px;
+}
+

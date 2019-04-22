@@ -1,25 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <app-logo/>
-      <h1 class="title">
-        make-my-appointment-front-end
-      </h1>
-      <h2 class="subtitle">
-        Hello G-mate
-      </h2>
-      <div class="links">
-        <v-btn
-          @click="login"
-        >
-          Login
-        </v-btn>
-        <v-btn
-          to="/register"
-        >
-          Register
-        </v-btn>
-      </div>
+      Register screen here
     </div>
   </section>
 </template>
@@ -30,11 +12,6 @@
   export default {
     components: {
       AppLogo
-    },
-    methods   : {
-      login () {
-        this.$router.push({ path: '/login' })
-      }
     }
   }
 </script>
