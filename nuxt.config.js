@@ -18,7 +18,8 @@ module.exports = {
     ]
   },
   plugins: [
-    '~plugins/vuetify.js'
+    '~plugins/vuetify',
+    '~plugins/vue-phone-number-input'
   ],
   css: ['~/assets/style/app.styl'],
 
