@@ -1,0 +1,15 @@
+{
+  "main": "main",
+  "register": "register",
+  "login": "login",
+  "language": "language",
+  "example": "example",
+  "country_code": "country code",
+  "phone_number": "phone number",
+  "wrong_credentials": "wrong credentials",
+  "check_your_sms": "check your sms",
+  "firstName": "first name",
+  "lastName": "last name",
+  "date_of_birth": "date of birth",
+  "unknown_error": "error happened"
+}

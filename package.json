@@ -16,10 +16,13 @@
     "@fortawesome/fontawesome-free": "^5.8.1",
     "@nuxtjs/pwa": "^3.0.0-beta.14",
     "axios": "^0.18.0",
+    "lodash": "^4.17.11",
     "nuxt": "^2.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-i18n": "^8.11.2",
     "vue-phone-number-input": "^0.1.8",
+    "vue-truncate-filter": "^1.1.7",
     "vuetify": "^1.5.12"
   },
   "devDependencies": {

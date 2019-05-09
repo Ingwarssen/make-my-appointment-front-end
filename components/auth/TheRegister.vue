@@ -1,26 +1,12 @@
 <template>
-  <div>
-    <vue-phone-number-input
-      v-model="phoneNumber"
-      default-country-code="UA"
-      :only-countries="['UA']"
-      :translations="{
-        countrySelectorLabel: 'Код країни',
-        phoneNumberLabel: 'Номер телефону',
-        example: 'Приклад:'
-      }"
-    />
-  </div>
-
+  <the-user-profile/>
 </template>
 
 <script>
+  import TheUserProfile from '@/components/userProfile/TheUserProfile'
+
   export default {
-    name: 'TheRegister',
-
-    data: () => ({
-      phoneNumber: ''
-    })
+    name      : 'TheRegister',
+    components: {TheUserProfile}
   }
-
 </script>

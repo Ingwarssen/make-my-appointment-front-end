@@ -1,0 +1,15 @@
+{
+  "main": "головна",
+  "register": "реєстрація",
+  "login": "вхід",
+  "language": "мова",
+  "example": "приклад",
+  "country_code": "код країни",
+  "phone_number": "номер телефону",
+  "wrong_credentials": "неправильні логін або пароль",
+  "unknown_error": "сталася помилка",
+  "firstName": "ім'я",
+  "lastName": "прізвище",
+  "date_of_birth": "день народження",
+  "check_your_sms": "перевірте смс"
+}

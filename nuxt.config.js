@@ -18,10 +18,14 @@ module.exports = {
     ]
   },
   plugins: [
+    '~plugins/i18n',
+    '~plugins/axios',
+    '~plugins/labels',
+    '~plugins/filters',
     '~plugins/vuetify',
     '~plugins/vue-phone-number-input'
   ],
-  css: ['~/assets/style/app.styl'],
+  css    : ['~/assets/style/app.styl'],
 
   modules: [
     '@nuxtjs/pwa'
