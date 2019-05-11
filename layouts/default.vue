@@ -73,7 +73,6 @@
   export default {
     computed: {
       pageName () {
-        console.log('wtf', this.$route.name)
         if (this.$route.name === 'index') {
           return 'main'
         }
