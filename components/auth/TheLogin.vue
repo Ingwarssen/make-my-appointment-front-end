@@ -1,23 +1,36 @@
 <template>
   <section class="container">
     <div>
-      <app-logo/>
-      <h1 class="title">
-        make-my-appointment-front-end
-      </h1>
-      <h2 class="subtitle">
-        PWA with possibility to set fitness trainings and interact with clients
-      </h2>
+      <v-facebook-login
+        app-id="390625541666819"
+        version="v3.3"
+        @login="handleLogin"
+        @logout="handleLogout"
+        @connect="handleConnect"
+        @sdk-init="handleInit"
+      >
+        <template slot="login">hello</template>
+      </v-facebook-login>
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
 
-export default {
-  components: {
-    AppLogo
+  export default {
+    methods: {
+      handleLogin (e) {
+        console.log('login done', e)
+      },
+      handleLogout (e) {
+        console.log('logout done', e)
+      },
+      handleConnect (e) {
+        console.log('connect done', e)
+      },
+      handleInit (e) {
+        console.log('init done', e)
+      }
+    }
   }
-}
 </script>
