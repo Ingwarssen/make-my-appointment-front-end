@@ -23,7 +23,8 @@ module.exports = {
     '~plugins/labels',
     '~plugins/filters',
     '~plugins/vuetify',
-    '~plugins/vue-phone-number-input'
+    {src: '~plugins/vue-phone-number-input', ssr: false},
+    {src: '~/plugins/facebook-login', ssr: false}
   ],
   css    : ['~/assets/style/app.styl'],
 
