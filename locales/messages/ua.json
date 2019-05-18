@@ -1,5 +1,9 @@
 {
   "main": "головна",
+  "settings": "налаштування",
+  "fb_sign_in": "Зайти через Facebook",
+  "fb_sign_out": "Вийти через Facebook",
+  "please_wait": "Будь-ласка зачекайте...",
   "register": "реєстрація",
   "login": "вхід",
   "language": "мова",
@@ -8,7 +12,7 @@
   "phone_number": "номер телефону",
   "wrong_credentials": "неправильні логін або пароль",
   "unknown_error": "сталася помилка",
-  "firstName": "ім'я",
+  "firstName": "ім`я",
   "lastName": "прізвище",
   "date_of_birth": "день народження",
   "check_your_sms": "перевірте смс"

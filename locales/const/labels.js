@@ -1,5 +1,9 @@
 export const LABEL = {
   main             : 'main',
+  settings         : 'settings',
+  fb_sign_in       : 'fb_sign_in',
+  fb_sign_out      : 'fb_sign_out',
+  please_wait      : 'please_wait',
   register         : 'register',
   login            : 'login',
   language         : 'language',

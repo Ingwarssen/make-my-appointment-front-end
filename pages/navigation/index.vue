@@ -6,7 +6,7 @@
         make-my-appointment-front-end
       </h1>
       <h2 class="subtitle">
-        Hello G-woman
+        Hello G-mate
       </h2>
       <div class="links">
         <v-btn

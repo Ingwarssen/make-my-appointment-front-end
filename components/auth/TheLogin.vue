@@ -9,7 +9,9 @@
         @connect="handleConnect"
         @sdk-init="handleInit"
       >
-        <template slot="login">hello</template>
+        <template slot="login">{{$t(LABEL.fb_sign_in)}}</template>
+        <template slot="logout">{{$t(LABEL.fb_sign_out)}}</template>
+        <template slot="working">{{$t(LABEL.please_wait)}}</template>
       </v-facebook-login>
     </div>
   </section>

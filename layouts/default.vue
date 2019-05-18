@@ -36,13 +36,14 @@
           <v-list-tile
             v-else
             :key="i"
+            @click="handleClick(item.path)"
           >
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title class="grey--text">
-                {{ item.text }}
+                {{ $te(item.text) ? $t(item.text) : item.text | capitalize }}
               </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
@@ -92,7 +93,7 @@
         {icon: 'archive', text: 'Archive'},
         {icon: 'delete', text: 'Trash'},
         {divider: true},
-        {icon: 'settings', text: 'Settings'},
+        {icon: 'settings', text: 'settings', path: '/navigation/settings'},
         {icon: 'chat_bubble', text: 'Trash'},
         {icon: 'help', text: 'Help'},
         {icon: 'phonelink', text: 'App downloads'},
@@ -102,6 +103,12 @@
 
     props: {
       source: String
+    },
+
+    methods: {
+      handleClick (path) {
+        path && this.$router.push({path})
+      }
     }
   }
 </script>

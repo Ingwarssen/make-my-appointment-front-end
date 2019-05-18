@@ -1,5 +1,9 @@
 {
   "main": "main",
+  "settings": "settings",
+  "fb_sign_in": "Sign in with Facebook",
+  "fb_sign_out": "Sign out with Facebook",
+  "please_wait": "Please wait...",
   "register": "register",
   "login": "login",
   "language": "language",

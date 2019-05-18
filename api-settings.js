@@ -1,5 +1,5 @@
 export const api = {
-  url: 'http://fak-web-development.eu-central-1.elasticbeanstalk.com/api/v1/',
+  url: 'localhost:3000/api/v1/',
   // auth api
   getToken: 'oauth2/authorize',
   forgotRequest: 'oauth2/forgot-request',
