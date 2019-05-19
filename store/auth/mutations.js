@@ -6,5 +6,8 @@ export default {
   },
   [type.DROP_AUTH] (state) {
     console.log('drop auth')
+  },
+  [type.SET_SETTINGS] (state, settings) {
+    state.settings = {...state.settings, ...settings}
   }
 }

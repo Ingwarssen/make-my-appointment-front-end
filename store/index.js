@@ -1,3 +1,5 @@
+import {get} from 'lodash'
+import {api} from '@/api-settings'
 import {LANGUAGE} from '@/utils/const'
 import * as mt from './mutationTypes'
 import * as actionType from './actionTypes'
@@ -61,6 +63,8 @@ export const actions = {
     if (Object.keys(axiosExtra).length) {
       console.log('You are probably uploading images, check headers:', axiosExtra)
     }
+
+    console.log('url:', url)
     try {
       result = await this.$axios({
         url,

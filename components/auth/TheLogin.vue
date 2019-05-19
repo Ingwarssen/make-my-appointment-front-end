@@ -1,9 +1,9 @@
 <template>
   <section class="container">
-    <div>
+    <div v-if="fbSettings.appId">
       <v-facebook-login
-        app-id="390625541666819"
-        version="v3.3"
+        :app-id="fbSettings.appId"
+        :version="fbSettings.apiVersion"
         @login="handleLogin"
         @logout="handleLogout"
         @connect="handleConnect"
@@ -18,9 +18,22 @@
 </template>
 
 <script>
+  import {createNamespacedHelpers} from 'vuex'
 
+  import {AUTH} from '@/store/storeTypes'
+
+  const {mapState} = createNamespacedHelpers(AUTH)
   export default {
+    computed: {
+      ...mapState({
+        fbSettings: state => state.settings.facebook
+      })
+    },
+
     methods: {
+      test () {
+        console.log('sett:', this.fbSettings)
+      },
       handleLogin (e) {
         console.log('login done', e)
       },

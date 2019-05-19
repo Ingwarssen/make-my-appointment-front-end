@@ -22,6 +22,7 @@ module.exports = {
     '~plugins/axios',
     '~plugins/labels',
     '~plugins/filters',
+    '~plugins/logger',
     '~plugins/vuetify',
     {src: '~plugins/vue-phone-number-input', ssr: false},
     {src: '~/plugins/facebook-login', ssr: false}
@@ -29,7 +30,9 @@ module.exports = {
   css    : ['~/assets/style/app.styl'],
 
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/axios',
+    '~/modules/common'
   ],
   /*
   ** Customize the progress bar color
@@ -55,6 +58,11 @@ module.exports = {
         })
       }
     }
+  },
+
+  env: {
+    IS_MOBILE: true,
+    SERVER_API_URL: 'http://localhost:3001/api/v1/'
   }
 }
 

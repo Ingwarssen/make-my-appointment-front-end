@@ -14,5 +14,20 @@ const api = apiStringify(serviceName)
 
 export default {
   async [actionType.login] ({commit, dispatch, rootState, state}, {email, password}) {
+  },
+
+  async [actionType.getSettings] ({commit, dispatch}) {
+    let settings
+
+    try {
+      settings = await dispatch(actionType.apiService, {
+        action: api.settings,
+        serviceName
+      }, {root})
+    } catch (e) {
+      return this.app.logger.error('Error during settings get in getSettings action.\nError: ', e)
+    }
+
+    commit(mt.SET_SETTINGS, settings)
   }
 }
