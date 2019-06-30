@@ -1,8 +1,10 @@
 import {get} from 'lodash'
 import {api} from '@/api-settings'
+import Cookies from '@/utils/cookies'
 import {LANGUAGE} from '@/utils/const'
 import * as mt from './mutationTypes'
 import * as actionType from './actionTypes'
+import {AUTH} from './storeTypes'
 
 export const state = () => ({
   loading: false,
@@ -16,8 +18,6 @@ export const mutations = {
   [mt.SET_LANG] (state, {id} = {}) {
     const localeItem = state.locales.find(item => item.id === id)
 
-    console.log('state locales', state.locales)
-    console.log('run set lang mutation', localeItem)
     if (localeItem) {
       this.app.i18n.locale = localeItem.code
       state.locale = localeItem
@@ -27,7 +27,6 @@ export const mutations = {
 
 export const actions = {
   [actionType.setLocale] ({commit}, locale) {
-    console.log('run set locale action')
     commit(mt.SET_LANG, locale)
   },
 
@@ -59,12 +58,11 @@ export const actions = {
     if (headers) {
       axiosExtra.headers = headers
     }
-
-    if (Object.keys(axiosExtra).length) {
+    ``
+    if (Object.keys(axiosExtra).length && serviceName === 'upload') {
       console.log('You are probably uploading images, check headers:', axiosExtra)
     }
 
-    console.log('url:', url)
     try {
       result = await this.$axios({
         url,
@@ -92,5 +90,24 @@ export const actions = {
     } else {
       throw result
     }
+  },
+
+  async nuxtServerInit ({commit, dispatch, state}, {req}) {
+    const tokenExpires = Cookies.getItem(req.headers.cookie, 'tokenExpires')
+    const tokenExpiresTimeStamp = new Date(tokenExpires)
+    const authToken = Cookies.getItem(req.headers.cookie, 'authToken')
+    const isLogged = Cookies.getItem(req.headers.isLogged, 'isLogged')
+    const refreshToken = Cookies.getItem(req.headers.cookie, 'refreshToken')
+    const userRole = Cookies.getItem(req.headers.cookie, 'userRole')
+    const userId = Cookies.getItem(req.headers.cookie, 'userId')
+
+    commit(`${AUTH}/${mt.SET_AUTH}`, {
+      userId,
+      userRole,
+      isLogged,
+      authToken,
+      refreshToken,
+      tokenExpires
+    })
   }
 }
