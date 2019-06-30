@@ -20,6 +20,7 @@ export const api = {
 
   auth: {
     settings: () => 'auth/settings',
+    facebook: () => 'auth/facebook',
     login   : (url, token, clientId, clientSecret) =>
       `${url}${token}?client_id=${clientId}&client_secret=${clientSecret}`,
     logout  : `oauth2/logout`

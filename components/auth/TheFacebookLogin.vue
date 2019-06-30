@@ -4,8 +4,8 @@
       <v-facebook-login
         :app-id="fbSettings.appId"
         :version="fbSettings.apiVersion"
-        @login="handleLogin"
-        @logout="handleLogout"
+        @login="fbLogin"
+        @logout="logout"
         @connect="handleConnect"
         @sdk-init="handleInit"
       >
@@ -21,8 +21,9 @@
   import {createNamespacedHelpers} from 'vuex'
 
   import {AUTH} from '@/store/storeTypes'
+  import {fbLogin, logout} from '@/store/actionTypes'
 
-  const {mapState} = createNamespacedHelpers(AUTH)
+  const {mapState, mapActions} = createNamespacedHelpers(AUTH)
   export default {
     computed: {
       ...mapState({
@@ -31,15 +32,10 @@
     },
 
     methods: {
-      test () {
-        console.log('sett:', this.fbSettings)
-      },
-      handleLogin (e) {
-        console.log('login done', e)
-      },
-      handleLogout (e) {
-        console.log('logout done', e)
-      },
+      ...mapActions({
+        fbLogin,
+        logout
+      }),
       handleConnect (e) {
         console.log('connect done', e)
       },

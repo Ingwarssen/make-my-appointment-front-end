@@ -16,13 +16,7 @@
       <v-flex lg3 md6 xs12>
         <v-text-field
           :label="$t(LABEL.firstName) | capitalize"
-          v-model="firstName"
-        />
-      </v-flex>
-      <v-flex lg3 md6 xs12>
-        <v-text-field
-          :label="$t(LABEL.lastName) | capitalize"
-          v-model="lastName"
+          v-model="fullName"
         />
       </v-flex>
       <v-flex lg3 md6 xs12>
@@ -55,21 +49,12 @@
         profile: state => state.profile
       }),
 
-      firstName: {
+      fullName: {
         get () {
-          return this.profile.firstName
+          return this.profile.fullName
         },
-        set (firstName) {
-          this.updateProfile({firstName})
-        }
-      },
-
-      lastName: {
-        get () {
-          return this.profile.lastName
-        },
-        set (lastName) {
-          this.updateProfile({lastName})
+        set (fullName) {
+          this.updateProfile({fullName})
         }
       },
 

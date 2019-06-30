@@ -3,9 +3,12 @@ export default function ({ $axios, store }) {
   // axios.config.headers['Authorization'] = 'Bearer xxx'
 
   // OR for each request
-  // $axios.onRequest(config => {
-  //   if (store.state.auth.authToken) {
-  //     config.headers.common['Authorization'] = `Bearer ${store.state.auth.authToken}`
-  //   }
-  // })
+  $axios.onRequest(config => {
+    const {authToken} = store.state.auth
+    if (authToken) {
+      config.headers.common['Authorization'] = `Bearer ${authToken}`
+    }
+
+    console.log('no token, try to redirect to login page')
+  })
 }

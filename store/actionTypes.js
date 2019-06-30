@@ -8,6 +8,9 @@ export const updateField = 'updateField'
 
 // auth
 export const login = 'login'
+export const fbLogin = 'fbLogin'
+export const logout = 'logout'
+export const setAccessToken = 'setAccessToken'
 
 // user profile
 export const getProfile = 'getProfile'

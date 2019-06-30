@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import TheLogin from '@/components/auth/TheLogin'
+  import TheLogin from '@/components/auth/TheFacebookLogin'
 
   export default {
     components: {TheLogin}

@@ -2,22 +2,12 @@
   <section class="container">
     <div>
       <app-logo/>
-      <h1 class="title">
-        make-my-appointment-front-end
-      </h1>
       <h2 class="subtitle">
         Hello G-woman
       </h2>
-      <div class="links">
+      <the-user-profile/>
+      <div v-if="facebookUser">
         <the-facebook-login/>
-        <v-btn
-          to="/register"
-        >
-          Register
-        </v-btn>
-        <v-btn>
-          Instagram login
-        </v-btn>
       </div>
     </div>
   </section>
@@ -25,12 +15,26 @@
 
 <script>
   import AppLogo from '@/components/AppLogo.vue'
+  import TheUserProfile from '@/components/userProfile/TheUserProfile'
   import TheFacebookLogin from '@/components/auth/TheFacebookLogin'
+
+  import {createNamespacedHelpers} from 'vuex'
+
+  import {AUTH} from '@/store/storeTypes'
+
+  const {mapState} = createNamespacedHelpers(AUTH)
 
   export default {
     components: {
       AppLogo,
+      TheUserProfile,
       TheFacebookLogin
+    },
+
+    computed: {
+      ...mapState({
+        facebookUser: state => state.session.facebookUser
+      })
     }
   }
 </script>
