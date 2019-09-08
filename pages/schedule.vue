@@ -1,12 +1,11 @@
 <template>
-  <the-login/>
+  <the-login />
 </template>
 
 <script>
-  import TheLogin from '@/components/auth/TheFacebookLogin'
+import TheLogin from '@/components/auth/TheFacebookLogin'
 
-  export default {
-    components: {TheLogin}
-  }
-
+export default {
+  components: { TheLogin }
+}
 </script>

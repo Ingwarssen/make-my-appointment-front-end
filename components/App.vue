@@ -22,15 +22,15 @@
 </template>
 
 <script>
-import AppLogo from "@/components/AppLogo.vue";
-import TheUserProfile from "@/components/userProfile/TheUserProfile";
-import TheFacebookLogin from "@/components/auth/TheFacebookLogin";
+import AppLogo from '@/components/AppLogo.vue'
+import TheUserProfile from '@/components/userProfile/TheUserProfile'
+import TheFacebookLogin from '@/components/auth/TheFacebookLogin'
 
-import { createNamespacedHelpers } from "vuex";
+import { createNamespacedHelpers } from 'vuex'
 
-import { AUTH } from "@/store/storeTypes";
+import { AUTH } from '@/store/storeTypes'
 
-const { mapState } = createNamespacedHelpers(AUTH);
+const { mapState } = createNamespacedHelpers(AUTH)
 
 export default {
   components: {
@@ -44,7 +44,7 @@ export default {
       facebookUser: state => state.session.facebookUser
     })
   }
-};
+}
 </script>
 
 <style>
@@ -57,8 +57,8 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif; /* 1 */
   display: block;
   font-weight: 300;
   font-size: 100px;
@@ -78,4 +78,3 @@ export default {
   padding-top: 15px;
 }
 </style>
-

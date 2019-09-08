@@ -1,9 +1,9 @@
 export default () => ({
   settings: {
     facebook: {
-      appId     : '',
+      appId: '',
       apiVersion: '',
-      appName   : ''
+      appName: ''
     }
   },
 
@@ -15,6 +15,6 @@ export default () => ({
     userRole: null,
     authToken: null,
     refreshToken: null,
-    tokenExpires: null,
+    tokenExpires: null
   }
 })

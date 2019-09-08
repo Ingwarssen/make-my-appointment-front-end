@@ -1,12 +1,11 @@
 <template>
-  <the-settings/>
+  <the-settings />
 </template>
 
 <script>
-  import TheSettings from '@/components/settings/TheSettings'
+import TheSettings from '@/components/settings/TheSettings'
 
-  export default {
-    components: {TheSettings}
-  }
+export default {
+  components: { TheSettings }
+}
 </script>
-

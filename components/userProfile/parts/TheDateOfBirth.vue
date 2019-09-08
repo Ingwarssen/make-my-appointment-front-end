@@ -10,14 +10,7 @@
     offset-y
   >
     <template v-slot:activator="{ on }">
-      <v-text-field
-        readonly
-        clearable
-        v-model="birthdayDateComputed"
-        :label="label"
-        prepend-icon="cancel"
-        v-on="on"
-      />
+      <v-text-field v-model="birthdayDateComputed" readonly clearable :label="label" prepend-icon="cancel" v-on="on" />
     </template>
     <v-date-picker
       ref="birthDayPicker"
@@ -32,7 +25,7 @@
 
 <script>
 export default {
-  name: "TheDateOfBirth",
+  name: 'TheDateOfBirth',
 
   props: {
     value: {
@@ -41,18 +34,24 @@ export default {
     },
     label: {
       type: String,
-      default: ""
+      default: ''
     }
   },
+
+  data: () => ({
+    birthdayDate: '',
+    menu: false,
+    maxDate: new Date().toISOString().substr(0, 10)
+  }),
 
   computed: {
     birthdayDateComputed: {
       get() {
-        return this.birthdayDate;
+        return this.birthdayDate
       },
       set(date) {
-        this.$emit("input", date);
-        this.birthdayDate = date;
+        this.$emit('input', date)
+        this.birthdayDate = date
       }
     }
   },
@@ -61,19 +60,13 @@ export default {
     menu(isOpen) {
       isOpen &&
         setTimeout(() => {
-          this.$refs["birthDayPicker"].activePicker = "YEAR";
-        }, 250);
+          this.$refs['birthDayPicker'].activePicker = 'YEAR'
+        }, 250)
     }
   },
 
   mounted() {
-    this.birthdayDate = this.value;
-  },
-
-  data: () => ({
-    birthdayDate: "",
-    menu: false,
-    maxDate: new Date().toISOString().substr(0, 10)
-  })
-};
+    this.birthdayDate = this.value
+  }
+}
 </script>

@@ -1,12 +1,11 @@
 <template>
-  <the-register/>
+  <the-register />
 </template>
 
 <script>
-  import TheRegister from '@/components/auth/TheRegister'
+import TheRegister from '@/components/auth/TheRegister'
 
-  export default {
-    components: {TheRegister}
-  }
-
+export default {
+  components: { TheRegister }
+}
 </script>

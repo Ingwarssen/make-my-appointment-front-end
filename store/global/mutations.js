@@ -1,9 +1,8 @@
 import * as type from '../mutationTypes'
-import { set } from 'lodash'
 import { TIMINGS } from '@/utils/const'
 
 export default {
-  [type.SET_SNACKBAR] (state, params) {
+  [type.SET_SNACKBAR](state, params) {
     let { timeout, message = '' } = params
 
     if (!timeout) {
@@ -12,7 +11,7 @@ export default {
 
     state.snackbar = Object.assign({}, state.snackbar, params, { open: true })
   },
-  [type.CLOSE_SNACKBAR] (state) {
+  [type.CLOSE_SNACKBAR](state) {
     state.snackbar.open = false
   }
 }

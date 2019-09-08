@@ -2,7 +2,7 @@ import * as type from '../mutationTypes'
 import Cookies from '@/utils/cookies'
 
 export default {
-  [type.SET_AUTH] (state, authData) {
+  [type.SET_AUTH](state, authData) {
     Cookies.setItem('authToken', authData.jwtToken)
     Cookies.setItem('userId', authData.id)
     Cookies.setItem('isLogged', true)
@@ -19,7 +19,7 @@ export default {
     state.session.role = authData.role
     state.session.tokenExpires = authData.tokenExpires
   },
-  [type.DROP_AUTH] (state) {
+  [type.DROP_AUTH](state) {
     state.session.role = null
     state.session.userId = null
     state.session.authToken = null
@@ -38,7 +38,7 @@ export default {
     Cookies.removeItem('facebookUser')
     Cookies.removeItem('instagramUser')
   },
-  [type.SET_SETTINGS] (state, settings) {
-    state.settings = {...state.settings, ...settings}
+  [type.SET_SETTINGS](state, settings) {
+    state.settings = { ...state.settings, ...settings }
   }
 }

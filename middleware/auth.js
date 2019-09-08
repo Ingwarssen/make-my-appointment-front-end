@@ -1,5 +1,5 @@
-export default function ({route, store, redirect, app}) {
-  const {isLogged} = store.state.auth.session
+export default function({ route, store, redirect, app }) {
+  const { isLogged } = store.state.auth.session
 
   if (!isLogged && route.path !== '/login') {
     return redirect('/login')

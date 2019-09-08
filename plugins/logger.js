@@ -1,12 +1,12 @@
-import {SET_SNACKBAR} from '../store/mutationTypes'
-import {LOGGER} from '../utils/const'
-import {LABEL} from '@/locales/const/labels'
-import {GLOBAL_SERVICE} from '@/store/serviceTypes'
+import { SET_SNACKBAR } from '../store/mutationTypes'
+import { LOGGER } from '../utils/const'
+import { LABEL } from '@/locales/const/labels'
+import { GLOBAL_SERVICE } from '@/store/serviceTypes'
 
 const snackBar = `${GLOBAL_SERVICE}/${SET_SNACKBAR}`
 const isProduction = process.env.NODE_ENV === 'production'
 
-function extractErrorMessage (error) {
+function extractErrorMessage(error) {
   let message = error.message
   if (Array.isArray(error)) {
     // try to get and show validation error
@@ -28,19 +28,19 @@ function extractErrorMessage (error) {
   return message
 }
 
-export default ({app, store}) => {
+export default ({ app, store }) => {
   app.logger = {
-    success (...message) {
+    success(...message) {
       const timeout = 2000
-      store.commit(snackBar, {message, timeout, color: 'light-green lighten-1'})
+      store.commit(snackBar, { message, timeout, color: 'light-green lighten-1' })
     },
-    authError () {
-      store.commit(snackBar, {message: LABEL.wrong_credentials, color: 'red'})
+    authError() {
+      store.commit(snackBar, { message: LABEL.wrong_credentials, color: 'red' })
     },
-    userWarning (message) {
-      store.commit(snackBar, {message, color: 'orange'})
+    userWarning(message) {
+      store.commit(snackBar, { message, color: 'orange' })
     },
-    error (errorHint, error) {
+    error(errorHint, error) {
       let message, timeout
       if (LOGGER.snackBar) {
         if (isProduction) {
@@ -51,7 +51,7 @@ export default ({app, store}) => {
           }
 
           timeout = 3000
-          store.commit(snackBar, {message, timeout, color: 'red'})
+          store.commit(snackBar, { message, timeout, color: 'red' })
           return
         }
 
@@ -60,7 +60,7 @@ export default ({app, store}) => {
           message = `${errorHint} ${extractErrorMessage(error)}`
         }
 
-        store.commit(snackBar, {message, timeout, color: 'red'})
+        store.commit(snackBar, { message, timeout, color: 'red' })
       }
 
       if (LOGGER.consoleLog) {

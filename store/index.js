@@ -1,21 +1,21 @@
-import {get} from 'lodash'
-import {api} from '@/api-settings'
+import { get } from 'lodash'
+import { api } from '@/api-settings'
 import Cookies from '@/utils/cookies'
-import {LANGUAGE} from '@/utils/const'
+import { LANGUAGE } from '@/utils/const'
 import * as mt from './mutationTypes'
 import * as actionType from './actionTypes'
-import {AUTH} from './storeTypes'
+import { AUTH } from './storeTypes'
 
 export const state = () => ({
   loading: false,
   locales: LANGUAGE,
-  locale : LANGUAGE[0]
+  locale: LANGUAGE[0]
 })
 
 export const getters = {}
 
 export const mutations = {
-  [mt.SET_LANG] (state, {id} = {}) {
+  [mt.SET_LANG](state, { id } = {}) {
     const localeItem = state.locales.find(item => item.id === id)
 
     if (localeItem) {
@@ -26,11 +26,11 @@ export const mutations = {
 }
 
 export const actions = {
-  [actionType.setLocale] ({commit}, locale) {
+  [actionType.setLocale]({ commit }, locale) {
     commit(mt.SET_LANG, locale)
   },
 
-  async apiService ({commit, store}, options) {
+  async apiService(ctx, options) {
     const {
       uuid = '',
       data = null,
@@ -58,7 +58,7 @@ export const actions = {
     if (headers) {
       axiosExtra.headers = headers
     }
-    ``
+    ;``
     if (Object.keys(axiosExtra).length && serviceName === 'upload') {
       console.log('You are probably uploading images, check headers:', axiosExtra)
     }
@@ -92,9 +92,8 @@ export const actions = {
     }
   },
 
-  async nuxtServerInit ({commit, dispatch, state}, {req}) {
+  async nuxtServerInit({ commit }, { req }) {
     const tokenExpires = Cookies.getItem(req.headers.cookie, 'tokenExpires')
-    const tokenExpiresTimeStamp = new Date(tokenExpires)
     const authToken = Cookies.getItem(req.headers.cookie, 'authToken')
     const isLogged = Cookies.getItem(req.headers.isLogged, 'isLogged')
     const refreshToken = Cookies.getItem(req.headers.cookie, 'refreshToken')

@@ -5,11 +5,11 @@ import ua from '@/locales/messages/ua.json'
 
 Vue.use(VueI18n)
 
-export default ({app, store}) => {
+export default ({ app, store }) => {
   app.i18n = new VueI18n({
-    locale        : store.state.locale.code,
+    locale: store.state.locale.code,
     fallbackLocale: 'en',
-    messages      : {
+    messages: {
       en,
       ua
     }

@@ -12,27 +12,27 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
-  import {setLocale} from '@/store/actionTypes'
-  import {LANGUAGE} from '@/utils/const'
+import { mapState, mapActions } from 'vuex'
+import { setLocale } from '@/store/actionTypes'
+import { LANGUAGE } from '@/utils/const'
 
-  export default {
-    name: 'TheSettings',
+export default {
+  name: 'TheSettings',
 
-    data: () => ({
-      languages  : LANGUAGE
-    }),
+  data: () => ({
+    languages: LANGUAGE
+  }),
 
-    computed: {
-      ...mapState({
-        language: state => state.language
-      })
-    },
+  computed: {
+    ...mapState({
+      language: state => state.language
+    })
+  },
 
-    methods: {
-      ...mapActions({
-        setLocale
-      })
-    }
+  methods: {
+    ...mapActions({
+      setLocale
+    })
   }
+}
 </script>

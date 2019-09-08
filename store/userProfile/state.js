@@ -1,10 +1,10 @@
 export default () => ({
-  profile : {
+  profile: {
     dateOfBirth: '',
-    phone      : '',
-    firstName  : '',
-    language   : 1,
-    lastName   : ''
+    phone: '',
+    firstName: '',
+    language: 1,
+    lastName: ''
   },
   settings: {}
 })
