@@ -2,7 +2,9 @@ import Cookies from 'js-cookie'
 
 export default {
   getItem(cookieStore, name) {
-    const cookieObj = cookieStore ? cookieStore.split(';').find(c => c.trim().startsWith(`${name}=`)) : false
+    const cookieObj = cookieStore
+      ? cookieStore.split(';').find(c => c.trim().startsWith(`${name}=`))
+      : false
     if (!cookieObj) {
       return
     }

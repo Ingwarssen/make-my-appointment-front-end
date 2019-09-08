@@ -10,7 +10,14 @@
     offset-y
   >
     <template v-slot:activator="{ on }">
-      <v-text-field v-model="birthdayDateComputed" readonly clearable :label="label" prepend-icon="cancel" v-on="on" />
+      <v-text-field
+        v-model="birthdayDateComputed"
+        readonly
+        clearable
+        :label="label"
+        prepend-icon="cancel"
+        v-on="on"
+      />
     </template>
     <v-date-picker
       ref="birthDayPicker"

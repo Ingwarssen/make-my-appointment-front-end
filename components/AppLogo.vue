@@ -1,5 +1,9 @@
 <template>
-  <img class="light-blue darken-2 height14" alt="G-family Logo" src="~static/img/Logo-white-back.jpg" />
+  <img
+    class="light-blue darken-2 height14"
+    alt="G-family Logo"
+    src="~static/img/Logo-white-back.jpg"
+  />
 </template>
 
 <style scoped>

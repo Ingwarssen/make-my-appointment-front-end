@@ -75,7 +75,10 @@ export default {
         { root }
       )
     } catch (e) {
-      return this.app.logger.error('Error during fb access token set in setAccessToken action.\nError: ', e)
+      return this.app.logger.error(
+        'Error during fb access token set in setAccessToken action.\nError: ',
+        e
+      )
     }
   }
 }

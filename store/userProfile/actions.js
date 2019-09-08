@@ -23,7 +23,10 @@ export default {
         { root }
       )
     } catch (e) {
-      return this.app.logger.error('Error on load user-profile settings  in getSettings action.\nError: ', e)
+      return this.app.logger.error(
+        'Error on load user-profile settings  in getSettings action.\nError: ',
+        e
+      )
     }
 
     commit(mt.SET_SETTINGS, settings)
@@ -61,7 +64,10 @@ export default {
         { root }
       )
     } catch (e) {
-      return this.app.logger.error('Error on update user-profile  in getProfile action.\nError: ', e)
+      return this.app.logger.error(
+        'Error on update user-profile  in getProfile action.\nError: ',
+        e
+      )
     }
 
     commit(mt.SET_PROFILE, profile)
