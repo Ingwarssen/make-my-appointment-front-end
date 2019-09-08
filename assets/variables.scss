@@ -1,13 +1,4 @@
-@import 'assets/fonts/googleRoboto.css';
-html {
-  overflow-y: auto !important;
-}
-
-/**
- * Initialize general style for app.
- */
-body
-  font: 12px Roboto, sans-serif
+@import '~vuetify/src/styles/styles.sass';
 
 /**
  * You can set default values for the stylus variables that you wish to change.
@@ -24,15 +15,12 @@ body
   overflow-x: hidden;
 }
 
-$spacer := 16px
+  // Import Vuetify styling, don't move to top of file
+@import '~vuetify/src/styles/styles.sass';
 
-// Import Vuetify styling, don't move to top of file
-@import '~vuetify/src/styles/styles.sass'
+@import './fonts/googleRoboto.css';
 
-// import custom styles for app
-@import './width'
-
-// modifiers
+  // modifiers
 .active-tab {
   background: rgba(255, 255, 255, .12);
 }
@@ -176,4 +164,3 @@ table.v-table thead td:not(:nth-child(1)), table.v-table tbody td:not(:nth-child
 .v-input.search-input.v-text-field.v-text-field--single-line {
   padding-top: 0px;
 }
-
